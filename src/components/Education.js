@@ -40,8 +40,18 @@ const education = [
 
 const Education = () => {
   return (
-    <Box id="education" sx={{ my: 8, px: { xs: 2, md: 8 }, backgroundColor: '#0a192f' }}>
-      <Typography variant="h4" sx={{ mb: 3, color: 'white', textAlign: 'center', fontWeight: 'bold' }}>
+    <Box id="education" sx={{ mt: '40px',    pt: 0, backgroundColor: '#0a192f' }}>
+        <Typography
+        variant="h4"
+        gutterBottom
+        sx={{
+          fontWeight: 'bold',
+           textAlign:'center' ,
+          background: 'linear-gradient(90deg, rgb(125, 35, 200) 0%, rgb(91, 33, 236) 55%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent'
+        }}
+      >
          My Education
       </Typography>
       <Typography variant="subtitle1" sx={{ mb: 4,textAlign: 'center',color:'lightgray' }}>
@@ -56,7 +66,7 @@ const Education = () => {
               <TimelineConnector sx={{ backgroundColor: '#3b82f6' }} />
             </TimelineSeparator>
             <TimelineContent sx={{ display: 'flex', justifyContent: index % 2 === 0 ? 'flex-start' : 'flex-end' }}>
-              <Box sx={{ ml: index % 2 === 0 ? 6: 0, mr: index % 2 !== 0 ? 10 : 0}}>
+              <Box sx={{ ml: index % 2 === 0 ? 6: 2, mr: index % 2 !== 0 ? 10 : 2}}>
                 <Paper
                   elevation={3}
                   sx={{

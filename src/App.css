@@ -1,8 +1,12 @@
 /* App.css */
 body {
   background-color: #0a192f;
-  margin: 0;
-  padding: 0;
   color: white;
   font-family: 'Roboto', sans-serif;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }

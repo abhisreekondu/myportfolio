@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography, Grid } from '@mui/material';
-import { FaJs, FaJava, FaReact, FaNode, FaDocker, FaAws, FaGitAlt, FaGithub, FaCuttlefish,FaChartBar,FaCode } from 'react-icons/fa';
-import { SiMongodb, SiMysql, SiKubernetes, SiPostman, SiSpringboot, SiVisualstudiocode, SiArduino, SiInsomnia } from 'react-icons/si';
+import { FaJs, FaJava, FaReact, FaNode, FaGitAlt, FaCuttlefish,FaChartBar,FaCode } from 'react-icons/fa';
+import { SiMongodb, SiMysql, SiPostman, SiArduino } from 'react-icons/si';
 import { DiPython } from 'react-icons/di';
 
 const skills = [
@@ -25,13 +25,29 @@ const skills = [
 ];
 
 const Skills = () => (
-  <Box id="skills" sx={{ backgroundColor: '#0a192f', color: 'white', py: 8, px: 4 }}>
-    <Typography variant="h4" align="center" gutterBottom sx={{ color: '#3b82f6' }}>
-      Skills
-    </Typography>
-    <Grid container spacing={3} justifyContent="center">
+  <Box id="skills" sx={{ backgroundColor: '#0a192f', color: 'white', py: 8, px: {xs: 2, sm: 4 }}}>
+    
+    
+    <Typography
+  variant="h4"
+  gutterBottom
+  sx={{
+    fontWeight: 'bold',
+     textAlign:'center' ,
+    background: 'linear-gradient(90deg, rgb(125, 35, 200) 0%, rgb(91, 33, 236) 55%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent'
+  }}
+>
+   SKILLS
+</Typography><Typography variant="subtitle1" sx={{ mb: 4,textAlign: 'center',color:'lightgray' }}>
+  A diverse and evolving technical skill set developed through hands-on projects and continuous learning across full-stack development and tools.
+</Typography>
+
+    <Grid container spacing={6} justifyContent="center">
       {skills.map((skill, index) => (
-        <Grid item xs={6} sm={4} md={3} lg={2} key={index}>
+        <Grid item xs={6} sm={3} md={2} key={index}>
+
           <Box sx={{
             display: 'flex',
             flexDirection: 'column',

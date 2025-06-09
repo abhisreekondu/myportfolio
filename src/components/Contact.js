@@ -6,12 +6,25 @@ import { FaEnvelope, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
 
  const Contact = () => (
   <Box id="contact" sx={{ backgroundColor: '#0a192f', color: 'white', py: 8, px: 4 }}>
-    <Typography variant="h4" align="center" gutterBottom sx={{ color: '#3b82f6' }}>
+     <Typography
+     variant="h4"
+     gutterBottom
+     sx={{
+       fontWeight: 'bold',
+        textAlign:'center' ,
+       background: 'linear-gradient(90deg, rgb(125, 35, 200) 0%, rgb(91, 33, 236) 55%)',
+       WebkitBackgroundClip: 'text',
+       WebkitTextFillColor: 'transparent'
+     }}
+   >
       Contact Me
     </Typography>
+<Typography variant="subtitle1" sx={{ mb: 4,textAlign: 'center',color:'lightgray' }}>
+ Let’s connect — open to collaborations, internships, and tech-driven opportunities.
+</Typography>
 
     {/* Contact Info */}
-   {/* Contact Info */}
+
 <Box
   sx={{
     display: 'flex',
