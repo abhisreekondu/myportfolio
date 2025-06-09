@@ -14,7 +14,7 @@ const floatVertical = keyframes`
 
 const Home = () => {
   return (
- <Box
+<Box
   id="home"
   sx={{
     minHeight: '100vh',
@@ -22,105 +22,115 @@ const Home = () => {
     color: 'white',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
+    flexDirection: { xs: 'column', md: 'row' }, // 👈 key line
     px: { xs: 2, md: 8 },
-    flexDirection: 'column',
-    textAlign: 'center',
+    pt: { xs: '80px', md: '60px' },
     gap: 4,
-    pt: { xs: '80px', md: '60px' }, // enough to avoid header overlap
   }}
 >
+  {/* Left Side - Text */}
+  <Box
+    sx={{
+      flex: 1,
+      maxWidth: { xs: '100%', md: '50%' },
+      textAlign: { xs: 'center', md: 'left' }, // 👈 center for mobile, left for desktop
+    }}
+  >
+    <Typography variant='h2'>👋 Hii!! I'm</Typography>
+    <Typography
+      variant="h3"
+      sx={{
+        ml: '10px',
+        fontWeight: 'bold',
+        color: '#3b82f6',
+        animation: `${floatVertical} 3s ease-in-out infinite`,
+        display: 'inline-block'
+      }}
+    >
+      ABHI SREE KONDU
+    </Typography>
 
-      {/* Left Side - Text */}
-      <Box
-        sx={{
-          flex: 1,
-          maxWidth: { xs: '100%', md: '50%' },
-        }}
+    <Typography variant="body1" color="gray" sx={{ py: 2 }}>
+      I'm a passionate Full Stack Developer and CSE (IoT) undergrad, skilled in building scalable, user-centric applications...
+    </Typography>
+
+    {/* Buttons */}
+    <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, mt: 2, justifyContent: { xs: 'center', md: 'flex-start' } }}>
+      <Button
+        variant="contained"
+        endIcon={<HiArrowNarrowRight />}
+        sx={{ background: 'linear-gradient(to right, #06b6d4, #3b82f6)' }}
       >
-        <Typography variant='h2'>👋 Hii!! I'm</Typography>
-        <Typography
-          variant="h3"
+        Download CV
+      </Button>
+
+      <ScrollLink to="contact" smooth duration={500}>
+        <Button
+          variant="contained"
+          endIcon={<HiArrowNarrowRight />}
+          sx={{ background: 'linear-gradient(to right, #06b6d4, #3b82f6)' }}
+        >
+          Connect
+        </Button>
+      </ScrollLink>
+    </Box>
+
+    {/* Social Icons */}
+    <Box sx={{ display: 'flex', gap: 2, mt: 3, justifyContent: { xs: 'center', md: 'flex-start' } }}>
+      {[{
+        icon: <FaGithub size={24} />,
+        href: 'https://github.com/abhisreekondu'
+      }, {
+        icon: <FaCode size={24} />,
+        href: 'https://leetcode.com/u/Abhi_Sree/'
+      }, {
+        icon: <FaLinkedin size={24} />,
+        href: 'https://www.linkedin.com/in/kondu-abhi-sree/'
+      }].map(({ icon, href }, index) => (
+        <IconButton
+          key={index}
+          component="a"
+          href={href}
+          target="_blank"
+          rel="noopener"
           sx={{
-            ml: '10px',
-            fontWeight: 'bold',
-            color: '#3b82f6',
-            animation: `${floatVertical} 3s ease-in-out infinite`,
-            display: 'inline-block'
+            color: 'white',
+            boxShadow: '0 0 10px #3b82f6',
+            transition: 'box-shadow 0.3s ease-in-out',
+            '&:hover': {
+              boxShadow: '0 0 15px #3b82f6',
+            },
           }}
         >
-          ABHI SREE KONDU
-        </Typography>
-
-        <Typography variant="body1" color="gray" sx={{ py: 2 }}>
-          I'm a passionate Full Stack Developer and CSE (IoT) undergrad, skilled in building scalable, user-centric applications. With quick adaptability across tech stacks and real-world project experience, I thrive on turning ideas into impactful solutions.
-        </Typography>
-
-        <ScrollLink to="about" smooth duration={500}>
-          <Button
-            variant="contained"
-            endIcon={<HiArrowNarrowRight />}
-            sx={{
-              background: 'linear-gradient(to right, #06b6d4, #3b82f6)',
-              mt: 2,
-            }}
-          >
-            Download CV
-          </Button>
-        </ScrollLink>
-
-        {/* Social Icons */}
-        <Box sx={{ display: 'flex', gap: 2, mt: 3 }}>
-          {[{
-            icon: <FaGithub size={24} />,
-            href: 'https://github.com/abhisreekondu'
-          }, {
-            icon: <FaCode size={24} />,
-            href: 'https://leetcode.com/u/Abhi_Sree/'
-          }, {
-            icon: <FaLinkedin size={24} />,
-            href: 'https://www.linkedin.com/in/kondu-abhi-sree/'
-          }].map(({ icon, href }, index) => (
-            <IconButton
-              key={index}
-              component="a"
-              href={href}
-              target="_blank"
-              rel="noopener"
-              sx={{
-                color: 'white',
-                boxShadow: '0 0 10px #3b82f6',
-                transition: 'box-shadow 0.3s ease-in-out',
-                '&:hover': {
-                  boxShadow: '0 0 15px #3b82f6',
-                },
-              }}
-            >
-              {icon}
-            </IconButton>
-          ))}
-        </Box>
-      </Box>
-
-      {/* Right Side - Image */}
-      <Box
-        sx={{
-          mt: 0,
-        }}
-      >
-        <Box
-          component="img"
-          src={me}
-          alt="My Profile"
-          sx={{
-            height: { md: 300 },
-            width: 'auto',
-            borderRadius: 4,
-            alignSelf: 'flex-end',
-          }}
-        />
-      </Box>
+          {icon}
+        </IconButton>
+      ))}
     </Box>
+  </Box>
+
+  {/* Right Side - Image */}
+  <Box
+    sx={{
+      flex: 1,
+      display: 'flex',
+      justifyContent: { xs: 'center', md: 'flex-end' }, // 👈 center on mobile, right on desktop
+    }}
+  >
+    <Box
+      component="img"
+      src={me}
+      alt="My Profile"
+      sx={{
+        height: {  md: 300 },
+        width: 'auto',
+        // maxWidth: { xs: '80%', sm: '70%', md: '100%' },
+        borderRadius: 4,
+      }}
+    />
+  </Box>
+</Box>
+
   );
 };
 
