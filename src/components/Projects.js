@@ -1,31 +1,33 @@
 import React from 'react';
 import { Box, Typography, Card, CardContent, CardMedia, Chip, Button, Stack } from '@mui/material';
 import { FaGithub } from 'react-icons/fa';
-
+import taxeaseImg from '../assests/taxease.png';
+import reviewpulseImg from '../assests/reviewpulse.png';
+import falldetectionImg from '../assests/falldetection.png';
 const projects = [
   {
     title: 'TaxEase',
     tech: ['React', 'Material UI', 'Node', 'Express'],
     description: `A fully responsive tax calculation platform for salaried individuals with a modern UI and New Tax Regime logic. Generates salary reports like Salary Table, Annexure II, and Form 16. Backend handles tax computation and routing.`,
-    image: '/images/taxease.png',
-    github: 'https://github.com/your-username/taxease',
-    live: '#'
+    image: taxeaseImg,
+    github: 'https://github.com/abhisreekondu/incometax',
+   
   },
   {
     title: 'Review Pulse',
-    tech: ['NLTK', 'Scikit-learn', 'WordCloud'],
+    tech: ['NLTK', 'Scikit-learn', 'WordCloud','Decision Tree','Streamlit'],
     description: `A sentiment analysis tool for Flipkart product reviews using TF-IDF, lemmatization, and machine learning classifiers (SVM, Random Forest, etc.). Offers data visualization and accurate sentiment classification.`,
-    image: '/images/reviewpulse.png',
-    github: 'https://github.com/your-username/reviewpulse',
-    live: '#'
+    image: reviewpulseImg,
+    github:'https://github.com/abhisreekondu/sentiment-analysis',
+   
   },
   {
     title: 'Smart Fall Detection',
     tech: ['ESP32', 'MPU6050', 'Arduino', 'Blynk'],
     description: `A wearable real-time fall detection system using motion sensors and Arduino. Sends alerts via SMS, email, and alarm using Blynk integration.`,
-    image: '/images/falldetection.png',
-    github: 'https://github.com/your-username/fall-detection',
-    live: '#'
+    image:falldetectionImg,
+    github:'https://github.com/abhisreekondu/smart_fall_detection/tree/main',
+   
   }
 ];
 
@@ -70,12 +72,19 @@ const Projects = () => {
               }}
             >
               {project.image && (
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={project.image}
-                  alt={project.title}
-                />
+               <CardMedia
+  component="img"
+  image={project.image}
+  alt={project.title}
+  sx={{
+    height: { xs: 180, sm: 250 },      // Responsive height
+    width: '100%',
+    objectFit: 'contain',              // Ensures full image fits inside without cropping
+    backgroundColor: '#1f2937',        // Optional: gives contrast if image has transparent parts
+    p: 2,                              // Optional padding inside image box
+  }}
+/>
+
               )}
               <CardContent sx={{ textAlign: 'center' }}>
                 <Typography variant="h5" sx={{ color: '#c084fc', fontWeight: 'bold' }}>
@@ -98,14 +107,6 @@ const Projects = () => {
                     sx={{ color: 'white', borderColor: 'gray' }}
                   >
                     Git
-                  </Button>
-                  <Button
-                    variant="text"
-                    href={project.live}
-                    target="_blank"
-                    sx={{ color: '#3b82f6' }}
-                  >
-                    Live Demo ↗
                   </Button>
                 </Box>
               </CardContent>
