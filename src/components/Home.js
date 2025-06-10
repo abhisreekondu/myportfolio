@@ -52,18 +52,21 @@ const Home = () => {
     </Typography>
 
     <Typography variant="body1" color="gray" sx={{ py: 2 }}>
-      I'm a passionate Full Stack Developer and CSE (IoT) undergrad, skilled in building scalable, user-centric applications...
+     I'm a passionate Full Stack Developer and CSE (IoT) undergrad, skilled in building scalable, user-centric applications with expertise in modern web technologies, cloud infrastructure, and IoT systems, aiming to solve real-world problems through clean architecture and efficient code.
     </Typography>
 
     {/* Buttons */}
     <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, mt: 2, justifyContent: { xs: 'center', md: 'flex-start' } }}>
-      <Button
-        variant="contained"
-        endIcon={<HiArrowNarrowRight />}
-        sx={{ background: 'linear-gradient(to right, #06b6d4, #3b82f6)' }}
-      >
-        Download CV
-      </Button>
+      <a href="/res.pdf" download style={{ textDecoration: 'none' }}>
+  <Button
+    variant="contained"
+    endIcon={<HiArrowNarrowRight />}
+    sx={{ background: 'linear-gradient(to right, #06b6d4, #3b82f6)' }}
+  >
+    Download CV
+  </Button>
+</a>
+
 
       <ScrollLink to="contact" smooth duration={500}>
         <Button
@@ -124,7 +127,6 @@ const Home = () => {
       sx={{
         height: {  md: 300 },
         width: 'auto',
-        // maxWidth: { xs: '80%', sm: '70%', md: '100%' },
         borderRadius: 4,
       }}
     />
