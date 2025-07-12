@@ -87,7 +87,7 @@ const Home = () => {
           {/* Buttons */}
           <motion.div variants={fadeIn}>
             <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, mt: 2, justifyContent: { xs: 'center', md: 'flex-start' } }}>
-              <a href="/res.pdf" download style={{ textDecoration: 'none' }}>
+              <a href="/Abhi Sree.pdf" download style={{ textDecoration: 'none' }}>
                 <Button
                   variant="contained"
                   endIcon={<HiArrowNarrowRight />}
